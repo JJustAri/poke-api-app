@@ -45,6 +45,6 @@ Ouvre un terminal dans le dossier du projet et exécute :
 # 1. Installer les dépendances (nécessaire une seule fois)
 npm install
 
-# 2. Lancer le serveur de développement
+# 2. Lancer la compilation du css
 npm run dev
-# puis ouvrir : http://localhost:5173
+# puis ouvrir votre live server 
