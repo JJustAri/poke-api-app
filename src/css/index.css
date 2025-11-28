@@ -1,5 +1,29 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+    --color-primary: #E3350D;
+    --color-secondary: #FFCC00;
+    --color-accent: #0075BE;
+    --color-neutral: #2B2B2B;
+    --color-base-100: #F7F7F7;
+    --color-base-200: #E2E2E2;
+    --color-base-300: #C7C7C7;
+    --color-base-content: #1A1A1A;
+}
 
 @theme {
-    --color-chestnut: #92290f;
+    
+}
+
+
+body {
+    background-image: url("/src/images/poke-bg.png");
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@utility flex-center {
+    @apply flex justify-center items-center;
 }

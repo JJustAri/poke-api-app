@@ -8,14 +8,12 @@
     <title>poke-api-app</title>
 </head>
 
-<body>
-    <main class="flex">
-        <div>
-            <h1 class="text-4xl font-bold text-chestnut">Test Tailwind</h1>
-
-            <form action="/search" method="get">
+<body class="h-screen">
+    <main class="flex-col flex-center h-full">
+        <div class="w-1/2 flex-center">
+            <form action="/search" method="get" class="">
                 <input type="text" name="pokemon" placeholder="Rechercher un pokémon..">
-                <button type="submit" class="button p-6">Rechercher</button>
+                <button type="submit" class="btn btn-primary hover:btn-secondary">Rechercher</button>
             </form>
         </div>
     </main>
