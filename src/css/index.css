@@ -20,6 +20,10 @@
     @apply text-base-100;
   }
 
+  body {
+    @apply bg-linear-to-b from-blue-200 to-red-150;
+  }
+
 }
 
 @theme {
@@ -27,12 +31,8 @@
 }
 
 
-body {
-}
 
 .bg-gradient {
-  background-size: 30%;
-  background-repeat: no-repeat;
   background-position: center;
   position: absolute;
   z-index: -1;
@@ -65,7 +65,7 @@ body {
   }
 
   .hover-scale {
-    @apply hover:scale-125 transition-transform duration-300;
+    @apply hover:scale-110 hover:btn-secondary hover:text-neutral transition-all duration-300 ;
   }
 }
 
