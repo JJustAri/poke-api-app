@@ -20,10 +20,10 @@
   },
   "homepage": "https://github.com/JJustAri/poke-api-app#readme",
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.17",
-    "tailwindcss": "^4.1.17"
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "daisyui": "^5.5.5"
+    "daisyui": "^5.5.14"
   }
 }
