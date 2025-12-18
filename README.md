@@ -1,12 +1,12 @@
 # 🌸 Poke App
 
-> Petit projet d'apprentissage — ** Tailwind CSS v4 + DaisyUI** + JavaScript (vanilla).  
+> Petit projet d'apprentissage — **Tailwind CSS v4 + DaisyUI** + JavaScript (vanilla) + Webpack.  
 > Objectif : pratiquer le `fetch()` et construire une UI agréable rapidement.
 
 ---
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Vite](https://img.shields.io/badge/bundler-Vite-brightgreen)](https://vitejs.dev/)
+[![Bundler: Webpack](https://img.shields.io/badge/bundler-Webpack-orange)](https://webpack.js.org/)
 [![TailwindCSS](https://img.shields.io/badge/css-Tailwind%20v4-blueviolet)](https://tailwindcss.com/)
 [![DaisyUI](https://img.shields.io/badge/ui-DaisyUI-9cf)](https://daisyui.com/)
 
@@ -17,7 +17,7 @@
 Ce projet sert de base pour :
 - apprendre l’utilisation de `fetch()` et la manipulation du DOM en JavaScript ;
 - découvrir Tailwind CSS v4 et DaisyUI ;
-- afficher une carte d'un pokemon via une barre de recherche
+- afficher une carte d'un Pokémon via une barre de recherche.
 
 ---
 
@@ -40,11 +40,29 @@ Un fichier `.nvmrc` est fourni avec la version recommandée (`24`).
 git clone https://github.com/JJustAri/poke-api-app.git
 cd poke-api-app
 
-Ouvre un terminal dans le dossier du projet et exécute :
+```
+### 2️⃣ Set up du projet
 
-# 1. Installer les dépendances (nécessaire une seule fois)
+Installer toutes les dépendances nécessaires au projet (Webpack, Tailwind CSS v4, DaisyUI, etc.) :
+
+```bash
 npm install
 
-# 2. Lancer la compilation du css
+``` 
+### 3️⃣ Lancer le serveur de développement
+
+```bash
 npm run dev
-# puis ouvrir votre live server 
+```
+- Webpack compile automatiquement le JavaScript et le CSS
+
+- Tailwind CSS v4 et DaisyUI sont traités via PostCSS
+
+- Le serveur de développement utilise le Hot Module Replacement (HMR)
+  
+### 4️⃣ Accéder à l’application
+
+Une fois le serveur lancé, l’application est accessible à l’adresse suivante :
+
+```bash
+http://localhost:8080/
