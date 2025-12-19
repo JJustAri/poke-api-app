@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true, // nettoie le dist à chaque build
+    clean: true,
   },
   module: {
     rules: [
@@ -15,11 +15,16 @@ module.exports = {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+      {
+      test: /\.js$/i,
+      exclude: /node_modules/,
+      type: 'javascript/auto',
+    },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // ton fichier HTML source
+      template: './src/index.html',
     }),
   ],
   devServer: {
