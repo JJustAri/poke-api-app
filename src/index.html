@@ -16,28 +16,32 @@
         <button id="start-button" class="btn btn-lg bg-primary hover:bg-[#E3350D] hover-scale border-base-100 text-base-100"> Commencer
             !</button>
     </div> -->
-  <dialog id="my_modal_2" class="modal">
+  <dialog id="explain-modal" class="modal">
     <div class="modal-box bg-blue-400 text-white text-shadow-md">
       <h3 class="text-lg font-bold text-center">Bienvenue sur Poke App !</h3>
       <p class="py-4 text-justify">👋
         Un projet d’apprentissage en JavaScript utilisant Tailwind CSS v4 et DaisyUI pour explorer l’API Pokémon.</p>
-        <p class="text-center">Clique sur <b class="text-primary">Commencer</b> pour chercher ton premier Pokémon !</p>
+      <p class="text-center">Clique sur <b class="text-primary">Commencer</b> pour chercher ton premier Pokémon !</p>
     </div>
     <form method="dialog" class="modal-backdrop">
       <button>close</button>
     </form>
   </dialog>
-  <div class=" flex-center w-full h-full">
-    <img src="/images/Poke-Api.png" alt="Poke API Logo"
-      class="pointer-none: absolute z[-3] top-20 w-[35%] min-w-[300px]">
-    <div>
-      <form action="/search" method="get" class="gap-5 flex">
+    <!-- Main content -->
+  <main class=" flex-center w-full h-full flex-col gap-10">
+    <img src="/images/Poke-Api.png" alt="Poke API Logo" class="pointer-none: absolute z[-3] top-20 w-[35%] min-w-75">
+    <div class="gap-5 flex flex-col mt-10">
+      <form action="" method="get" class="gap-5 flex">
         <input type="text" name="pokemon" placeholder="Rechercher un pokémon..">
         <button type="submit" class="btn btn-primary hover-scale text-shadow-md">Rechercher</button>
       </form>
-      <div id="errorDiv" class="text">ErroR Here</div>
+      <div id="errorDiv" class="text bg-amber-500 p-3 h-auto">Erreur : card not found</div>
     </div>
-  </div>
+    <div class="w-3/4 flex h-auto gap-4 justify-center">
+       <div class="bg-amber-800 border-2 grow h-[20px] max-w-[25%]"></div>
+       <div class="bg-amber-800 border-2 grow h-[20px] max-w-[25%]"></div>
+      </div>
+  </main>
 
   <script type="module" src="/bundle.js"></script>
 </body>
