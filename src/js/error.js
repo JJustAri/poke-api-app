@@ -1,11 +1,7 @@
-let message = "";
 
-export function showError(message) {
+export function showError(error) {
   const errorDiv = document.getElementById("errorDiv");
 
-  if (data.length === 0) {
-    message = "pokémon not found";
-    errorDiv.textContent = message;
-    errorDiv.classList.remove("hidden");
-  }
+  errorDiv.textContent = error.message;
+  errorDiv.classList.remove('hidden');
 }
