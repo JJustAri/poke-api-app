@@ -28,14 +28,6 @@ module.exports = {
     }),
   ],
   devServer: {
-    proxy: [
-      {
-        context: ['/api'],
-        target: 'https://api.pokemontcg.io',
-        changeOrigin: true,
-        pathRewrite: { '^/api': '' },
-      },
-    ],
     static: ['./dist','./public'],
     hot: true,
     watchFiles: ['src/**/*'],
