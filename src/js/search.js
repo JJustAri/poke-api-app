@@ -13,14 +13,15 @@ export async function searchInit() {
     if (cards.length === 0) {
       cards = await getData(url);
     }
-
+    console.log(cards)
     const pokemonName = searchInput.value.toLowerCase().trim();
 
     const filteredCards = cards.filter(card => 
     card.name.toLowerCase().includes(pokemonName))
 
     filteredCards.forEach(card => {
-        createCard(card)
+        // createCard(card)
+        console.log(card)
     });
   });
 }
