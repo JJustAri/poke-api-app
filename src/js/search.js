@@ -22,9 +22,13 @@ export async function searchInit() {
 
     limitedCards.forEach(card => {
         createCard(card);
-        console.log(card)
+        
     });
   });
+
+  searchInput.addEventListener("input", function (e) {
+    cardContainer.replaceChildren();
+  })
 }
 
 async function getData(url) {
