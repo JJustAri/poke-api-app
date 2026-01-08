@@ -1,8 +1,9 @@
-
-export async function searchInit() {
   const searchInput = document.getElementById("pokemon-input");
   const searchButton = document.getElementById("search-button");
   const cardContainer = document.getElementById("card-container");
+
+export async function searchInit() {
+
   let cards = [];
 
   searchButton.addEventListener("click", async function (e) {
@@ -13,14 +14,14 @@ export async function searchInit() {
     if (cards.length === 0) {
       cards = await getData(url);
     }
-    console.log(cards)
     const pokemonName = searchInput.value.toLowerCase().trim();
 
     const filteredCards = cards.filter(card => 
-    card.name.toLowerCase().includes(pokemonName))
+    card.name.toLowerCase().includes(pokemonName));
+    const limitedCards = filteredCards.slice(0,15);
 
-    filteredCards.forEach(card => {
-        // createCard(card)
+    limitedCards.forEach(card => {
+        createCard(card);
         console.log(card)
     });
   });
@@ -59,15 +60,20 @@ async function getData(url) {
 }
 
 function createCard(card) {
+  
   let divCard = document.createElement("div");
   divCard.classList.add(
-    "bg-amber-800 border-2 grow h-5 max-w-[25%] p-4 m-2 rounded-lg flex flex-col items-center"
+    'hover-scale', 'cursor-pointer', 'shadow-2xl', 'rounded-2xl', 'grow', 'h-auto', 'max-w-[30%]'
   );
 
   let imgCard = document.createElement("img");
-  imgCard.src = card
-  imgCard.alt = response.name;
+  imgCard.src = card.image + "/high.webp"
+  imgCard.alt = card.name;
   imgCard.classList.add("box-border");
 
+  if(card.image === undefined) {
+    return;
+  }
   cardContainer.appendChild(divCard);
+  divCard.appendChild(imgCard);
 }
