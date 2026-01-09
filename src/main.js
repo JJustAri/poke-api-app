@@ -5,7 +5,7 @@ import { searchInit } from './js/search.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    initLandingPage();
+    // initLandingPage();
     // initmodal();
     searchInit();
     

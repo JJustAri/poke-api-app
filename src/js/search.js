@@ -1,6 +1,9 @@
+import { showError } from "./error";
+
   const searchInput = document.getElementById("pokemon-input");
   const searchButton = document.getElementById("search-button");
   const cardContainer = document.getElementById("card-container");
+  const errorDiv = document.getElementById("errorDiv");
 
 export async function searchInit() {
 
@@ -9,6 +12,13 @@ export async function searchInit() {
   searchButton.addEventListener("click", async function (e) {
     e.preventDefault();
 
+    if (searchInput.value.length === 0) {
+
+      searchInput.setCustomValidity('Veuillez entrer un nom de pokemon');
+      searchInput.reportValidity();
+
+      return;
+    }
     const url = `https://api.tcgdex.net/v2/fr/cards`;
 
     if (cards.length === 0) {
@@ -18,6 +28,16 @@ export async function searchInit() {
 
     const filteredCards = cards.filter(card => 
     card.name.toLowerCase().includes(pokemonName));
+    
+
+        if (filteredCards.length === 0) {
+
+      errorDiv.textContent = "Aucun résultat trouvé pour votre recherche."
+      errorDiv.removeAttribute('hidden');
+
+      return;
+    }
+
     const limitedCards = filteredCards.slice(0,15);
 
     limitedCards.forEach(card => {
@@ -27,7 +47,14 @@ export async function searchInit() {
   });
 
   searchInput.addEventListener("input", function (e) {
-    cardContainer.replaceChildren();
+
+    if(cardContainer.childElementCount > 0) {
+      cardContainer.replaceChildren();
+    }
+    
+    if (!errorDiv.hasAttribute("hidden")) {
+    errorDiv.setAttribute("hidden",'');
+    }
   })
 }
 
@@ -36,7 +63,7 @@ async function getData(url) {
   try {
 
     const response = await fetch(url);
-
+    console.log(response.status)
     if (!response.ok) {
     let errorMessage = "Une erreur est survenue";
     
@@ -65,6 +92,10 @@ async function getData(url) {
 
 function createCard(card) {
   
+    if(card.image === undefined) {
+    return;
+  }
+
   let divCard = document.createElement("div");
   divCard.classList.add(
     'hover-scale', 'cursor-pointer', 'shadow-2xl', 'rounded-2xl', 'grow', 'h-auto', 'max-w-[30%]'
@@ -75,9 +106,7 @@ function createCard(card) {
   imgCard.alt = card.name;
   imgCard.classList.add("box-border");
 
-  if(card.image === undefined) {
-    return;
-  }
+
   cardContainer.appendChild(divCard);
   divCard.appendChild(imgCard);
 }
