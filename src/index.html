@@ -32,8 +32,9 @@
     <img src="/images/Poke-Api.png" alt="Poke API Logo" class="pointer-none: absolute z[-3] top-20 w-[35%] min-w-75">
     <div class="gap-5 flex flex-col mt-10">
       <form action="" method="get" class="gap-5 flex">
-        <input id="pokemon-input" type="text" name="pokemon" placeholder="Rechercher un pokémon . . ." 
-        class="placeholder:font-pokemon placeholder:opacity-80 placeholder:text-base min-w-60 border border-base-100 rounded-lg p-2" required>
+        <input id="pokemon-input" type="text" name="pokemon" placeholder="Rechercher un pokémon . . ."
+          class="placeholder:font-pokemon placeholder:opacity-80 placeholder:text-base min-w-60 border border-base-100 rounded-lg p-2"
+          required>
         <button id="search-button" type="submit" class="btn btn-primary hover-scale text-shadow-md">Rechercher</button>
       </form>
       <div id="errorDiv" class="text-base-100 bg-accent p-3 h-auto rounded-sm text-center" hidden></div>
@@ -41,6 +42,14 @@
     <div id="card-container" class="w-full flex h-auto flex-wrap gap-4 justify-center">
       <!-- Cards will be dynamically inserted here -->
     </div>
+    <dialog id="pokemon-card-modal" class="modal">
+      <div class="modal-box rounded-3xl p-0">
+        <img id="modal-card-img" src="" alt="">
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
   </main>
 
   <script type="module" src="/bundle.js"></script>

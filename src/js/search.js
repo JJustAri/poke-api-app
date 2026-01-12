@@ -95,15 +95,27 @@ function createCard(card) {
     if(card.image === undefined) {
     return;
   }
+  
+  const cardSrc = card.image + "/high.webp";
+  const cardName = card.name;
+
+  const pokemonModal = document.getElementById('pokemon-card-modal');
+  const modalCardImg = document.getElementById('modal-card-img');
 
   let divCard = document.createElement("div");
   divCard.classList.add(
     'hover-scale', 'cursor-pointer', 'shadow-2xl', 'rounded-2xl', 'grow', 'h-auto', 'max-w-[30%]'
   );
 
+  divCard.addEventListener('click', function () {
+    modalCardImg.src = cardSrc;
+    modalCardImg.alt = cardName;
+    pokemonModal.showModal();
+  })
+
   let imgCard = document.createElement("img");
-  imgCard.src = card.image + "/high.webp"
-  imgCard.alt = card.name;
+  imgCard.src = cardSrc;
+  imgCard.alt = cardName;
   imgCard.classList.add("box-border");
 
 
