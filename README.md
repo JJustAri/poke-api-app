@@ -1,7 +1,7 @@
 # 🌸 Poke App
 
 > Petit projet d'apprentissage — **Tailwind CSS v4 + DaisyUI** + JavaScript (vanilla) + Webpack.  
-> Objectif : pratiquer le `fetch()` et construire une UI agréable rapidement.
+> Objectif : pratiquer le `fetch()` avec l'api de TCGdex et construire une UI agréable rapidement.
 
 ---
 
@@ -20,14 +20,6 @@ Ce projet sert de base pour :
 - afficher une carte d'un Pokémon via une barre de recherche.
 
 ---
-
-## 📝 Commentaires dans le code
-
-Les commentaires insérés dans ce projet sont rédigés en **français** pour rester cohérent
-avec l'auteur et la majorité des sources. Si vous travaillez en équipe internationale,
-privilégiez l'anglais pour rendre le code plus accessible.
-
-
 
 ## 🧰 Prérequis
 
