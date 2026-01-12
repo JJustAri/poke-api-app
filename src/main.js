@@ -1,11 +1,14 @@
-require('./style.css');
+// Entrée principale de l'application.
+import './style.css';
+import { initmodal } from './js/modals/explain-modal.js';
+import { initLandingPage } from './js/landing.js';
+import { searchInit } from './js/search.js';
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const startBtn = document.getElementById("start-button");
-    const slidePage = document.getElementById("slide-page");
-    startBtn.addEventListener("click", () => {
-        slidePage.style.transform = "translateY(-100%)";
-        slidePage.style.transition = "transform 0.5s ease-in-out";
-    });
+    initLandingPage();
+    initmodal();
+    searchInit();
+    
  });
+ 

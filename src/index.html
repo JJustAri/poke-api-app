@@ -2,32 +2,61 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>poke-api-app</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>poke-api-app</title>
 </head>
 
-<body class="h-screen max-h-screen">
-
-    <div id="slide-page" class="flex-col flex-center h-full absolute top-0 left-0 bottom-0 right-0 w-full z-30">
-        <div class="bg-gradient w-full h-full"></div>
-        <div class="bg-white w-full h-full z-[-2] absolute"></div>
-        <img src="/images/poke-bg.png" alt="Pokemon Logo" class="h-[50%] mb-8 pointer-none:">
-        <button id="start-button" class="btn btn-lg bg-primary hover:bg-[#E3350D] hover-scale border-base-100 text-base-100"> Commencer
-            !</button>
+<body class="min-h-screen flex-center">
+  <!-- Slide page d'accueil -->
+  <div id="slide-page" class="flex-col flex-center h-full absolute top-0 left-0 bottom-0 right-0 w-full z-30">
+    <div class="bg-gradient w-full h-full"></div>
+    <div class="bg-white w-full h-full z-[-2] absolute"></div>
+    <img src="/images/poke-bg.png" alt="Pokemon Logo" class="h-[50%] mb-8 pointer-none:">
+    <button id="start-button"
+      class="btn btn-lg bg-primary hover:bg-[#E3350D] hover-scale border-base-100 text-base-100"> Commencer
+      !</button>
+  </div> 
+  <!-- Modal d'explication -->
+  <dialog id="explain-modal" class="modal">
+    <div class="modal-box bg-blue-400 text-white text-shadow-md">
+      <h3 class="text-lg font-bold text-center">Bienvenue sur Poke App !</h3>
+      <p class="py-4 text-justify">👋
+        Un projet d’apprentissage en JavaScript utilisant Tailwind CSS v4 et DaisyUI pour explorer l’API TCGdex.</p>
+      <p class="text-center">Clique sur <b class="text-primary">Commencer</b> pour chercher ton premier Pokémon !</p>
     </div>
-    <div class=" flex-center w-full h-full">
-            <img src="/images/Poke-Api.png" alt="Poke API Logo" class="pointer-none: absolute z[-3] top-20 w-[35%] min-w-[300px]">
-            <div>
-            <form action="/search" method="get" class="gap-5 flex">
-                <input type="text" name="pokemon" placeholder="Rechercher un pokémon..">
-                <button type="submit" class="btn btn-primary hover-scale text-shadow-md">Rechercher</button>
-            </form>
-            <div id="errorDiv" class="text">ErroR Here</div>
-            </div>
-        </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
+  <!-- Main content -->
+  <main class="flex-center flex-col gap-10 mt-72 min w-3/4">
+    <img src="/images/Poke-Api.png" alt="Poke API Logo" class="pointer-none: absolute z[-3] top-20 w-[35%] min-w-75">
+    <div class="gap-5 flex flex-col mt-10">
+      <form action="" method="get" class="gap-5 flex">
+        <input id="pokemon-input" type="text" name="pokemon" placeholder="Rechercher un pokémon . . ."
+          class="placeholder:font-pokemon placeholder:opacity-80 placeholder:text-base min-w-60 border border-base-100 rounded-lg p-2"
+          required>
+        <button id="search-button" type="submit" class="btn btn-primary hover-scale text-shadow-md">Rechercher</button>
+      </form>
+      <div id="errorDiv" class="text-base-100 bg-accent p-3 h-auto rounded-sm text-center" hidden></div>
+    </div>
+    <div id="card-container" class="w-full flex h-auto flex-wrap gap-4 justify-center">
+      <!-- Cards will be dynamically inserted here -->
+    </div>
+    <dialog id="pokemon-card-modal" class="modal">
+      <div class="modal-box rounded-3xl p-0 hover-3d">
+        <img id="modal-card-img" src="" alt="">
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button type="button">close</button>
+      </form>
+    </dialog>
+  </main>
+  </main>
 
-        <script type="module" src="/bundle.js"></script>
+  <!-- Bundle généré par Webpack (entrée: src/main.js) -->
+  <script type="module" src="/bundle.js"></script>
 </body>
 
 </html>
