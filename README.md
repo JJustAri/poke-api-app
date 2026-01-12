@@ -21,6 +21,14 @@ Ce projet sert de base pour :
 
 ---
 
+## 📝 Commentaires dans le code
+
+Les commentaires insérés dans ce projet sont rédigés en **français** pour rester cohérent
+avec l'auteur et la majorité des sources. Si vous travaillez en équipe internationale,
+privilégiez l'anglais pour rendre le code plus accessible.
+
+
+
 ## 🧰 Prérequis
 
 - **Node.js** (version LTS recommandée, ex. `v24.x`)  

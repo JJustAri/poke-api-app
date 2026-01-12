@@ -1,3 +1,5 @@
+// Configuration Webpack (développement)
+// Ce fichier configure l'entrée, la sortie et le serveur de développement.
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
